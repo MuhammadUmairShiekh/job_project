@@ -1,0 +1,10 @@
+.navbar{
+    background-color: var(--Hearder) !important;
+}
+.logo{
+    text-transform: uppercase;
+}
+
+.list a{
+    color: var(--listColor) !important;
+}
