@@ -1,10 +1,26 @@
-.navbar{
-    background-color: var(--Hearder) !important;
+.navbar {
+  background-color: var(--Hearder) !important;
 }
-.logo{
-    text-transform: uppercase;
+.logo {
+  text-transform: uppercase;
+  color: var(--listColor) !important;
+  font-weight: 900 !important;
 }
 
-.list a{
-    color: var(--listColor) !important;
+.list a {
+  color: var(--listColor) !important;
+  font-weight: 600 !important;
+  transition: 0.7s ease-in !important;
+}
+.btn {
+  border: 1px solid var(--listColor) !important;
+  transition: 0.3s ease-in-out !important;
+}
+.btn:hover {
+  background-color: var(--listColor) !important;
+  color: #ffff !important;
+}
+
+.nav_active {
+  border-bottom: 1px solid var(--listColor) !important;
 }

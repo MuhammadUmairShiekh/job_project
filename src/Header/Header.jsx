@@ -5,15 +5,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { NavLink, Outlet } from "react-router-dom";
-import '../Header/Header.css'
+import "../Header/Header.css";
 
 function Header() {
   return (
     <>
       {["sm"].map((expand) => (
-        <Navbar key={expand} expand={expand} className=" navbar mb-3">
+        <Navbar key={expand} expand={expand} className=" navbar">
           <Container fluid>
-            <Navbar.Brand href="#" className="text-white logo">Navbar Offcanvas</Navbar.Brand>
+            <Navbar.Brand href="#" className=" logo">
+              Navbar Offcanvas
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -22,24 +24,43 @@ function Header() {
             >
               <Offcanvas.Header closeButton className="navbar">
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Navbar Offcanvas
+                  Navbar Offcanvas
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="list  justify-content-end flex-grow-1 pe-3">
-                  <NavLink to={"/"}>
+                  <NavLink
+                    to={"/"}
+                    className={(navClass) =>
+                      navClass.isActive ? "nav_active" : " "
+                    }
+                  >
                     <Nav.Link href="#action1">Home</Nav.Link>
                   </NavLink>
-                  <NavLink to={"/Product"}>
+                  <NavLink
+                    to={"/Product"}
+                    className={(navClass) =>
+                      navClass.isActive ? "nav_active" : " "
+                    }
+                  >
                     <Nav.Link href="#action2">Product</Nav.Link>
                   </NavLink>
-                  <NavLink to={"/Aboutus"}>
+                  <NavLink
+                    to={"/Aboutus"}
+                    className={(navClass) =>
+                      navClass.isActive ? "nav_active" : " "
+                    }
+                  >
                     <Nav.Link href="#action2">About</Nav.Link>
                   </NavLink>
-                  <NavLink to={"/Contact"}>
+                  <NavLink
+                    to={"/Contact"}
+                    className={(navClass) =>
+                      navClass.isActive ? "nav_active" : " "
+                    }
+                  >
                     <Nav.Link href="#action2">Contact</Nav.Link>
                   </NavLink>
-                 
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
@@ -48,7 +69,9 @@ function Header() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-light">Search</Button>
+                  <Button variant="" className="btn">
+                    Search
+                  </Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

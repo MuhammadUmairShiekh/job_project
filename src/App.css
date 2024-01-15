@@ -5,6 +5,7 @@
   text-decoration: none !important;
 }
 :root {
-  --Hearder: #34495e;
-  --listColor: #fff;
+  --Hearder: #fff;
+  --listColor: #142769;
+  --lIGHTBg: #f5f6fa;
 }
