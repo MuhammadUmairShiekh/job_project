@@ -1,8 +1,9 @@
 .hero_section {
-  background-image: url(../Images/Home\ Page.jpg);
+  /* background-image: url(../Images/Home\ Page.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: white;
   width: 100%;
   line-height: 50px !important;
   overflow-x: hidden;
@@ -11,14 +12,14 @@
 }
 
 .hero_section h2 {
-  color: var(--Hearder);
+  color: var(--listColor);
   font-size: 2.4rem;
   font-weight: 600;
   margin: 20px 0px;
 }
 
 .hero_section p {
-  color: var(--Hearder);
+  color: var(--listColor);
   line-height: 30px;
   width: 30rem;
 }
@@ -27,17 +28,19 @@
   margin-top: 0.7rem;
   font-weight: 600;
   padding: 1px;
-  background-color: var(--Hearder);
+  background-color: var(--listColor);
   border-radius: 5px;
   width: 180px;
   border: none;
   outline: none;
   transition: 1.1s all;
 }
-.buy_btn a{
-    color: var(--listColor);
+.buy_btn a {
+  color: var(--Hearder);
 }
 
 .buy_btn:hover {
-  transform:translateX(30px) !important;
+  transform: translateX(30px) !important;
 }
+
+

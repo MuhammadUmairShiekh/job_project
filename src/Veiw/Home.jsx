@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Home_Page from "../Images/hero-img.png";
+import Home_Page from "../Images/mobile-app2.gif";
 import { motion } from "framer-motion";
 import "../Styles/Home.css";
 import { NavLink } from "react-router-dom";
@@ -8,15 +8,22 @@ import ProductCard from "./ProductCard";
 
 const Home = () => {
   const [productData, setProductData] = useState([]);
+  const [ring, setRing] = useState([]);
 
   useEffect(() => {
     getData();
   }, []);
   function getData() {
-    fetch("https://fakestoreapi.com/products")
+    const data = fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((res) => setProductData(res));
+      .then((data) => setProductData(data));
   }
+
+  // let data1 = fetch("https://fakestoreapi.com/products/categories")
+  //   .then((res) => res.json())
+  //   .then((data1) => setRing(data1));
+  // const filterData = data1.filter((item) => item.category === "men's clothing");
+  // setRing(filterData);
 
   const year = new Date().getFullYear();
 
@@ -53,13 +60,14 @@ const Home = () => {
                 }}
                 whileInView={{ opacity: 1 }}
               >
+                {console.log(ring)}
                 <motion.button whileTap={{ scale: 1.4 }} className="buy_btn">
                   <NavLink to={"/Product"}>All_PRODUCTS</NavLink>
                 </motion.button>
               </motion.span>
             </Col>
             <Col lg="6" md="12">
-              <div>
+              <div className="">
                 <motion.div
                   className="hero_img"
                   initial={{ opacity: 0 }}
@@ -71,7 +79,7 @@ const Home = () => {
                   }}
                   whileInView={{ opacity: 1 }}
                 >
-                  {/* <img src={Home_Page} alt="" /> */}
+                  <img src={Home_Page} alt="" />
                 </motion.div>
               </div>
             </Col>
@@ -81,15 +89,17 @@ const Home = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="12">
+            <Col>
               <h2>Products</h2>
-              {productData.map((item) => {
-                return (
-                  <div className="main">
-                    <ProductCard title={item.title} />
-                  </div>
-                );
-              })}
+              <div className="main">
+                {productData.map((item) => {
+                  return (
+                    <div>
+                      <ProductCard title={item.title} image={item.image} />
+                    </div>
+                  );
+                })}
+              </div>
             </Col>
           </Row>
         </Container>

@@ -1,16 +1,22 @@
 .navbar {
-  background-color: var(--Hearder) !important;
+  /* background-color: var(--Hearder) !important; */
+  background-color: transparent;
+  border-bottom: 1px solid var(--listColor);
 }
 .logo {
   text-transform: uppercase;
   color: var(--listColor) !important;
   font-weight: 900 !important;
+  z-index: 0 !important;
+
 }
 
 .list a {
   color: var(--listColor) !important;
   font-weight: 600 !important;
   transition: 0.7s ease-in !important;
+  z-index: 0 !important;
+
 }
 .btn {
   border: 1px solid var(--listColor) !important;
