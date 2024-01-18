@@ -6,12 +6,36 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { NavLink, Outlet } from "react-router-dom";
 import "../Header/Header.css";
+import { useEffect, useRef } from "react";
 
 function Header() {
+  const headerRef = useRef(null);
+
+  let stickyHeader = () => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 60 ||
+        document.documentElement.scrollTop > 60
+      ) {
+        headerRef.current.classList.add("sticky_Nav");
+      } else {
+        headerRef.current.classList.remove("sticky_Nav");
+      }
+    });
+  };
+  useEffect(() => {
+    stickyHeader();
+  }, []);
+
   return (
     <>
       {["sm"].map((expand) => (
-        <Navbar key={expand} expand={expand} className=" navbar">
+        <Navbar
+          ref={headerRef}
+          key={expand}
+          expand={expand}
+          className=" navbar  "
+        >
           <Container fluid>
             <Navbar.Brand href="#" className=" logo">
               Navbar Offcanvas

@@ -73,7 +73,7 @@ const Home = () => {
                   initial={{ opacity: 0 }}
                   animate={{ x: [700, 0] }}
                   transition={{
-                    duration: 2.1,
+                    duration: 1.1,
                     ease: "easeOut",
                     delay: 1.1,
                   }}
@@ -90,12 +90,20 @@ const Home = () => {
         <Container>
           <Row>
             <Col>
-              <h2>Products</h2>
+              <div className="product"> 
+                <h2>Products</h2>
+              </div>
               <div className="main">
                 {productData.map((item) => {
                   return (
                     <div>
-                      <ProductCard title={item.title} image={item.image} />
+                      <ProductCard
+                        title={item.title}
+                        image={item.image}
+                        price={Math.round(item.price)}
+                        category={item.category}
+                        btn={("/Product/") + item.id}
+                      />
                     </div>
                   );
                 })}

@@ -5,12 +5,12 @@ import { Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 const ProductCard = (props) => {
-  const { title, image, price } = props;
+  const { title, image, price , category , btn } = props;
   return (
     <Col lg="12" md="4" className="mb-2">
       <div className="product_item">
         <div className="product_img">
-          <NavLink to={"`/Shop/${item.id}`"}>
+          <NavLink to={btn}>
             <motion.img
               src={image}
               whileHover={{ scale: 1.1 }}
@@ -29,7 +29,7 @@ const ProductCard = (props) => {
           <NavLink to={"ko"}>
             <h3 className="product_name">{title}</h3>
           </NavLink>
-          <p className="product_P">{"item.category"}</p>
+          <p className="product_P">{category}</p>
         </div>
 
         <div className="product_card-bottom p-4">

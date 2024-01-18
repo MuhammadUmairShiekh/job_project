@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Products from "../Veiw/Products";
 import About from "../Veiw/About";
 import Contact from "../Veiw/Contact";
+import ProductDetail from "../Veiw/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/Product",
         element: <Products />,
+      },
+      {
+        path: "/Product/:id",
+        element: <ProductDetail />,
       },
       {
         path: "/Aboutus",
