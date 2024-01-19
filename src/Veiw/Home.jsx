@@ -5,28 +5,39 @@ import { motion } from "framer-motion";
 import "../Styles/Home.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import UseGetData from "./UseGetData";
+import Loader from "./Loader";
 
 const Home = () => {
-  const [productData, setProductData] = useState([]);
+  // const { data: products } = UseGetData("products");
+  const [productData, setProductData] = useState();
   const [ring, setRing] = useState([]);
 
   useEffect(() => {
     getData();
   }, []);
   function getData() {
-    const data = fetch("https://fakestoreapi.com/products")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => setProductData(data));
+      .then((res) => setProductData(res));
   }
 
-  // let data1 = fetch("https://fakestoreapi.com/products/categories")
-  //   .then((res) => res.json())
-  //   .then((data1) => setRing(data1));
-  // const filterData = data1.filter((item) => item.category === "men's clothing");
-  // setRing(filterData);
+  // useEffect(() => {
+  //   const filterData = products.filter(
+  //     (item) => item.category === "men's clothing"
+  //   );
+  //   setRing(filterData);
+  // }, [products]);
 
   const year = new Date().getFullYear();
 
+  if (!productData) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
   return (
     <>
       <section className="hero_section">
@@ -60,7 +71,6 @@ const Home = () => {
                 }}
                 whileInView={{ opacity: 1 }}
               >
-                {console.log(ring)}
                 <motion.button whileTap={{ scale: 1.4 }} className="buy_btn">
                   <NavLink to={"/Product"}>All_PRODUCTS</NavLink>
                 </motion.button>
@@ -89,10 +99,11 @@ const Home = () => {
       <section>
         <Container>
           <Row>
-            <Col>
-              <div className="product"> 
-                <h2>Products</h2>
+            <Col lg="12">
+              <div className="product">
+                <h2>Products list</h2>
               </div>
+
               <div className="main">
                 {productData.map((item) => {
                   return (
@@ -102,7 +113,7 @@ const Home = () => {
                         image={item.image}
                         price={Math.round(item.price)}
                         category={item.category}
-                        btn={("/Product/") + item.id}
+                        btn={"/Product/" + item.id}
                       />
                     </div>
                   );

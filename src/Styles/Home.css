@@ -44,12 +44,13 @@
 }
 
 .product h2{
-  font-size: 4rem !important;
+  font-size: 3rem !important;
   text-transform: uppercase !important;
   margin-bottom: 6rem !important;
   margin-top: 4rem !important;
   text-align: center;
   color: var(--listColor);
+  
 }
 
 
