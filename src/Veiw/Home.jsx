@@ -6,12 +6,13 @@ import "../Styles/Home.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import UseGetData from "./UseGetData";
-import Loader from "./Loader";
+
 
 const Home = () => {
-  // const { data: products } = UseGetData("products");
   const [productData, setProductData] = useState();
   const [ring, setRing] = useState([]);
+
+
 
   useEffect(() => {
     getData();
@@ -31,13 +32,6 @@ const Home = () => {
 
   const year = new Date().getFullYear();
 
-  if (!productData) {
-    return (
-      <>
-        <Loader />
-      </>
-    );
-  }
   return (
     <>
       <section className="hero_section">
@@ -101,28 +95,34 @@ const Home = () => {
           <Row>
             <Col lg="12">
               <div className="product">
-                <h2>Products list</h2>
+                <h2 id="Product">Products list</h2>
               </div>
 
               <div className="main">
-                {productData.map((item) => {
-                  return (
-                    <div>
-                      <ProductCard
-                        title={item.title}
-                        image={item.image}
-                        price={Math.round(item.price)}
-                        category={item.category}
-                        btn={"/Product/" + item.id}
-                      />
-                    </div>
-                  );
-                })}
+                {!productData ? (
+                  <div class="loader"></div>
+                ) : (
+                  productData.map((item) => {
+                    return (
+                      <div>
+                        <ProductCard
+                          title={item.title}
+                          image={item.image}
+                          price={Math.round(item.price)}
+                          category={item.category}
+                          btn={"/Product/" + item.id}
+                        />
+                      </div>
+                    );
+                  })
+                )}
               </div>
             </Col>
           </Row>
         </Container>
       </section>
+
+      
     </>
   );
 };

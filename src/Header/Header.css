@@ -45,6 +45,8 @@
 .btn {
   border: 1px solid var(--listColor) !important;
   transition: 0.3s ease-in-out !important;
+  margin: 5px;
+  border-radius: 5px !important;
 }
 .btn:hover {
   background-color: var(--listColor) !important;
