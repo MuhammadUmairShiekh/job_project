@@ -1,0 +1,9 @@
+.slider img {
+  z-index: -1 !important;
+  background-color: red !important;
+  width: 100% !important;
+}
+
+.slider {
+  width: 100% !important;
+}

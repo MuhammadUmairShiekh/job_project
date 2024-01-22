@@ -6,13 +6,12 @@ import "../Styles/Home.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import UseGetData from "./UseGetData";
-
+import Slider from "./Slider";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const [productData, setProductData] = useState();
   const [ring, setRing] = useState([]);
-
-
 
   useEffect(() => {
     getData();
@@ -121,8 +120,11 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      <div className="slider">
+        <Slider />
+      </div>
 
-      
+      <Footer />
     </>
   );
 };

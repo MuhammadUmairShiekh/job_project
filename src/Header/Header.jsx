@@ -43,7 +43,6 @@ function Header() {
     stickyHeader();
   }, []);
 
-  
   return (
     <>
       {["sm"].map((expand) => (
@@ -119,6 +118,7 @@ function Header() {
           </Container>
         </Navbar>
       ))}
+
       <Outlet />
 
       <Modal show={show} className="back" onHide={handleClose}>
@@ -193,14 +193,13 @@ function Header() {
                 }}
                 noValidate
                 autoComplete="off"
-                
               >
                 <div className="text">
                   <TextField
                     id="standard-textarea"
                     label="Multiline"
                     placeholder="Placeholder"
-                    // className={classes.textField}                    
+                    // className={classes.textField}
                     variant="standard"
                   />
                 </div>

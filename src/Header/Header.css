@@ -1,6 +1,7 @@
 .navbar {
   /* background-color: var(--Hearder) !important; */
   background-color: transparent;
+  /* z-index: 1; */
 }
 .logo {
   text-transform: uppercase;
@@ -15,6 +16,7 @@
   left: 0 !important;
   z-index: 1;
   transition: 0.2s ease-in-out !important;
+
 }
 .sticky_Nav .list a {
   color: white !important;
