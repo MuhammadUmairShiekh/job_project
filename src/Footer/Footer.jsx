@@ -96,14 +96,14 @@ const Footer = () => {
                     <p>Email@Dreamfurniture.com.pk</p>
                   </a>
                 </ListGroupItem>
-                <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-2">
+                {/* <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-2">
                   <input className="subScript" type="text" placeholder="Enter Email Address " />
                   <button className="btnn" type="submit">Subscript</button>
-                </ListGroupItem>
+                </ListGroupItem> */}
               </ListGroup>
             </div>
           </Col>
-          <Col lg="12" className="mb-4">
+          <Col lg="12" className="mb-2">
             <p className="footer_copyright">
               <i class="ri-copyright-line"></i> Copyright {year} Dream Furniture
               All Right Reserved

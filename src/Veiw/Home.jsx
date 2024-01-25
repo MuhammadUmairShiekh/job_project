@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Home_Page from "../Images/mobile-app2.gif";
+import Home_Page from "../Images/hero_image.png";
 import { motion } from "framer-motion";
 import "../Styles/Home.css";
 import { NavLink } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import UseGetData from "./UseGetData";
 import Slider from "./Slider";
+import Typewriter from "typewriter-effect";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       .then((res) => setProductData(res));
   }
 
+ 
   // useEffect(() => {
   //   const filterData = products.filter(
   //     (item) => item.category === "men's clothing"
@@ -47,8 +49,36 @@ const Home = () => {
                 }}
                 whileInView={{ opacity: 1 }}
               >
-                <p className="hero_subtitle"> Trending Product In {year}</p>
-                <h2>Make Your Interior More Minimalistic & Modern</h2>
+                {/* <Typewriter
+                  options={{
+                    strings: [
+                      `<p className="hero_subtitle"> Trending Product In ${
+                        year
+                      }</p>`
+                    ],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                /> */}
+
+                {/* <p className="hero_subtitle"> Trending Product In {year}</p> */}
+                <Typewriter
+                  options={{
+                    strings: [`<span>Trending Product In ${year}</span>`],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+                <h2>
+                  Make Your Interior More
+                  <Typewriter
+                    options={{
+                      strings: ["<span> Minimalistic Modern</span>"],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Neque unde itaquelaborum numquam ullam sequi vero, incidunt
@@ -70,8 +100,8 @@ const Home = () => {
               </motion.span>
             </Col>
             <Col lg="6" md="12">
-              <div className="">
-                <motion.div
+              <div className="imag">
+                {/* <motion.div
                   className="hero_img"
                   initial={{ opacity: 0 }}
                   animate={{ x: [700, 0] }}
@@ -83,7 +113,7 @@ const Home = () => {
                   whileInView={{ opacity: 1 }}
                 >
                   <img src={Home_Page} alt="" />
-                </motion.div>
+                </motion.div> */}
               </div>
             </Col>
           </Row>
@@ -120,9 +150,9 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <div className="slider">
+      {/* <div className="slider">
         <Slider />
-      </div>
+      </div> */}
 
       <Footer />
     </>
