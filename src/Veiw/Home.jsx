@@ -7,8 +7,9 @@ import { NavLink } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import UseGetData from "./UseGetData";
 import Slider from "./Slider";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter";
 import Footer from "../Footer/Footer";
+import Products from "./Products";
 
 const Home = () => {
   const [productData, setProductData] = useState();
@@ -23,15 +24,12 @@ const Home = () => {
       .then((res) => setProductData(res));
   }
 
- 
   // useEffect(() => {
   //   const filterData = products.filter(
   //     (item) => item.category === "men's clothing"
   //   );
   //   setRing(filterData);
   // }, [products]);
-
-  const year = new Date().getFullYear();
 
   return (
     <>
@@ -49,36 +47,44 @@ const Home = () => {
                 }}
                 whileInView={{ opacity: 1 }}
               >
-                {/* <Typewriter
-                  options={{
-                    strings: [
-                      `<p className="hero_subtitle"> Trending Product In ${
-                        year
-                      }</p>`
-                    ],
-                    autoStart: true,
-                    loop: true,
+                <span> {<Products />}</span>
+                <h2>Make Your Fashion More</h2>
+                <h4
+                  style={{
+                    // paddingTop: "5rem",
+                    margin: "auto 0",
+                    fontWeight: "normal",
+                    inline: "block",
                   }}
-                /> */}
-
-                {/* <p className="hero_subtitle"> Trending Product In {year}</p> */}
-                <Typewriter
-                  options={{
-                    strings: [`<span>Trending Product In ${year}</span>`],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-                <h2>
-                  Make Your Interior More
-                  <Typewriter
-                    options={{
-                      strings: ["<span> Minimalistic Modern</span>"],
-                      autoStart: true,
-                      loop: true,
+                >
+                  Fashion Designing Modern{" "}
+                  <span
+                    style={{
+                      color: "#142769",
+                      fontWeight: "bold",
+                      textTransform: "uppercase",
                     }}
-                  />
-                </h2>
+                  >
+                    <Typewriter
+                      words={[
+                        "Men-Shirts",
+                        "Men-Pants",
+                        "Men-Accessories",
+                        "Men-Kurta",
+                        "classic",
+                        "traditional",
+                      ]}
+                      loop={5}
+                      cursor
+                      cursorStyle="_"
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                      // onLoopDone={handleDone}
+                      // onType={handleType}
+                    />
+                  </span>
+                </h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Neque unde itaquelaborum numquam ullam sequi vero, incidunt
@@ -99,9 +105,10 @@ const Home = () => {
                 </motion.button>
               </motion.span>
             </Col>
-            <Col lg="6" md="12">
-              <div className="imag">
-                {/* <motion.div
+            <Col lg="6" md="8" sm="12">
+              <div className="img_upper">
+                <div className="imag">
+                  {/* <motion.div
                   className="hero_img"
                   initial={{ opacity: 0 }}
                   animate={{ x: [700, 0] }}
@@ -114,6 +121,7 @@ const Home = () => {
                 >
                   <img src={Home_Page} alt="" />
                 </motion.div> */}
+                </div>
               </div>
             </Col>
           </Row>

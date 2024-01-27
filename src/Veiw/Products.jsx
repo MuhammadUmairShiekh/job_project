@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import Typewriter from "typewriter-effect";
 
 const Products = () => {
-  return (
-    <div>Products</div>
-  )
-}
+  const year = new Date().getFullYear();
 
-export default Products
+  return (
+    <div>
+      <Typewriter
+        options={{
+          strings: [`<span>Trending Fashion ${year}</span>`],
+          autoStart: true,
+          loop: true,
+        }}
+      />
+    </div>
+  );
+};
+
+export default Products;
