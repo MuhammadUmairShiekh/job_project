@@ -16,7 +16,7 @@ const Footer = () => {
               {/* <motion.img whileTap={{ scale: 1.2 }} src={logo} alt="" /> */}
               <div>
                 <h5 className="text-white fs-6">
-                  DREAM-FURNITURE <br /> Since 1999
+                <span>Fashions   For Men</span>
                 </h5>
               </div>
             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
                     <i class="ri-mail-send-fill"></i>
                   </span>
                   <a href="https://mail.google.com/" target="_blank">
-                    <p>Email@Dreamfurniture.com.pk</p>
+                    <p>Email@fashion.com.pk</p>
                   </a>
                 </ListGroupItem>
                 {/* <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-2">
@@ -105,7 +105,7 @@ const Footer = () => {
           </Col>
           <Col lg="12" className="mb-2">
             <p className="footer_copyright">
-              <i class="ri-copyright-line"></i> Copyright {year} Dream Furniture
+              <i class="ri-copyright-line"></i> Copyright {year} Fashion For Men
               All Right Reserved
             </p>
           </Col>

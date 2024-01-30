@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import logo from "../Images/accessory.png";
 import { NavLink, Outlet } from "react-router-dom";
 import "../Header/Header.css";
 import { useEffect, useState, useRef } from "react";
@@ -54,7 +55,8 @@ function Header() {
         >
           <Container fluid>
             <Navbar.Brand href="#" className=" logo">
-              Navbar Offcanvas
+              <span>Fashions <img src={logo} width={"40"} alt="" />  For Men</span>
+              
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

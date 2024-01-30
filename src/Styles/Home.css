@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
 .hero_section {
   /* background-image: url(../Images/Home\ Page.jpg);
   background-position: center;
@@ -11,11 +13,11 @@
   position: relative;
 }
 .imag {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   /* width: 50%; */
   animation: color 21.7s linear infinite;
   /* filter: drop-shadow(5px 5px 10px #333); */
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 .img_upper {
   width: 39.3rem;
@@ -27,7 +29,7 @@
   0% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
       url("../Images/one.png");
@@ -40,7 +42,7 @@
   20% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
       url("../Images/two.png");
@@ -53,10 +55,10 @@
   40% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
-      url("../Images/three.png");
+      url("../Images/one.png");
     opacity: 0.8;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +69,7 @@
   60% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
       url("../Images/four.png");
@@ -80,7 +82,7 @@
   80% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
       url("../Images/last.png");
@@ -93,7 +95,7 @@
   100% {
     background-image: linear-gradient(
         to right,
-        rgba(245, 246, 252, 0.52),
+        rgba(245, 246, 252, 0.224),
         rgba(48, 96, 175, 0.643)
       ),
       url("../Images/six.png");
@@ -116,12 +118,16 @@
   font-size: 2.4rem;
   font-weight: 600;
   margin: 20px 0px;
+  font-family: "Marck Script", cursive;
+
 }
 
 .hero_section p {
   color: var(--listColor);
   line-height: 30px;
   width: 30rem;
+  font-family: "Marck Script", cursive;
+
 }
 
 .buy_btn {

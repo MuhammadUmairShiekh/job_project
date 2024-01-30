@@ -1,15 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@300&family=Risque&family=Roboto:wght@300;400&display=swap");
+
 .navbar {
   /* background-color: var(--Hearder) !important; */
   background-color: transparent;
-  border-bottom: 3px solid rgb(10, 128, 255);
-  /* z-index: 1; */
+  border-bottom: 4px solid var(--listColor);
+  z-index: 1;
+  /* height: 4rem; */
 }
 .logo {
   text-transform: uppercase;
   color: var(--listColor) !important;
   font-weight: 900 !important;
   z-index: 0 !important;
+  font-family: 'Monoton', sans-serif;
+  
 }
+
 .sticky_Nav {
   background-color: var(--listColor);
   position: sticky !important;
@@ -17,7 +23,10 @@
   left: 0 !important;
   z-index: 1;
   transition: 0.2s ease-in-out !important;
+}
 
+.sticky_Nav img{
+  filter: invert(1);
 }
 .sticky_Nav .list a {
   color: white !important;

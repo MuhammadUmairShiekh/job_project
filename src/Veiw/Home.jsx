@@ -10,6 +10,7 @@ import Slider from "./Slider";
 import { Typewriter } from "react-simple-typewriter";
 import Footer from "../Footer/Footer";
 import Products from "./Products";
+import Swal from "sweetalert2";
 
 const Home = () => {
   const [productData, setProductData] = useState();
@@ -24,12 +25,56 @@ const Home = () => {
       .then((res) => setProductData(res));
   }
 
-  // useEffect(() => {
-  //   const filterData = products.filter(
-  //     (item) => item.category === "men's clothing"
-  //   );
-  //   setRing(filterData);
-  // }, [products]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Swal.fire({
+      //   title: "Men T-Shirt",
+      //   text: "Men T-Shirt Limited Order",
+      //   imageUrl: "https://www.hangree.com.pk/cdn/shop/files/15f0227d-9059-42e6-ae73-d3ca345cb39f_2000x.jpg?v=1696689487",
+      //   imageWidth: 400,
+      //   imageHeight: 200,
+      //   imageAlt: "Custom image",
+      //   button: "Order Now"
+      // });
+    
+      Swal.fire({
+        title: "<strong><u>Men T-Shirt</u></strong>",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+        text: ` Men T-Shirt Limited Order <br/> 3900`,
+        imageUrl:
+          "https://www.hangree.com.pk/cdn/shop/files/15f0227d-9059-42e6-ae73-d3ca345cb39f_2000x.jpg?v=1696689487",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: `
+          <i class="fa fa-thumbs-up"></i> Order Now!
+        `,
+
+        // confirmButtonAriaLabel: "Thumbs up, great!",
+        // cancelButtonText: `
+        //   <i class="fa fa-thumbs-down"></i>
+        // `,
+        // cancelButtonAriaLabel: "Thumbs down",
+      });
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
